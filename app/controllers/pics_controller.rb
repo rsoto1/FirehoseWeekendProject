@@ -4,11 +4,14 @@ def new
 		@pic = Pic.new
 end
 
-def index
+def create
+	@pic = Pic.create(params[:pic])
+	redirect_to pics_path
 end
 
-def create
-end
+def index
+	@pics = Pic.all
+end	
 
 def show
 end
