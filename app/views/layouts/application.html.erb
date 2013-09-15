@@ -20,8 +20,9 @@
 		      </a>
 		 
 		      <!-- Be sure to leave the brand out there if you want it shown -->
+		      <li>
 		      <%= link_to('My First Web Page',root_path, :class => 'brand') %>
-		 
+		 	</li>
 		 
 		      <!-- Everything you want hidden at 940px or less, place within here -->
 		      <div class="nav-collapse collapse">
@@ -31,9 +32,23 @@
 		      		<li>
 		      			<%= link_to('My App', pics_path, :class => 'brand') %>
 		      		</li>
-		      	
+		      	<li>
 		      		<%= link_to 'New Pic', new_pic_path,
 		      			:class => 'btn btn-warning' %>
+		      	</li>
+		      	 <% if current_user.blank? %>
+<li>
+            <%= link_to 'LOG IN', new_user_session_path %> 
+        </li>
+        <li>
+            <%= link_to 'REGISTER', new_user_registration_path %>
+        </li>
+
+           <% else %>
+
+            <%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %>
+
+           <% end %>
 		      	
 		      </ul>
 		      </div>
