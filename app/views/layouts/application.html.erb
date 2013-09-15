@@ -20,7 +20,8 @@
 		      </a>
 		 
 		      <!-- Be sure to leave the brand out there if you want it shown -->
-		      <a class="brand" href="#">My First Web Page!</a>
+		      <%= link_to('My First Web Page',root_path, :class => 'brand') %>
+		 
 		 
 		      <!-- Everything you want hidden at 940px or less, place within here -->
 		      <div class="nav-collapse collapse">
@@ -28,7 +29,7 @@
 
 		      <ul class="Nav">
 		      		<li>
-		      			<%= link_to('My First Web Page',root_path, :class => 'brand') %>
+		      			<%= link_to('My App', pics_path, :class => 'brand') %>
 		      		</li>
 		      	
 		      		<%= link_to 'New Pic', new_pic_path,
